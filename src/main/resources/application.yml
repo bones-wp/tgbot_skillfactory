@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/tgbot-skillfactory
+    username: postgres
+    password: root
+cbr:
+  api:
+    url: https://www.cbr.ru/dailyinfowebserv/dailyinfo.asmx?wsdl
+server:
+  port: 9090
