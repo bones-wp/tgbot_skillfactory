@@ -6,6 +6,6 @@ spring:
     password: root
 cbr:
   api:
-    url: https://www.cbr.ru/dailyinfowebserv/dailyinfo.asmx?wsdl
+    url: http://www.cbr.ru/dailyinfowebserv/dailyinfo.asmx?wsdl
 server:
   port: 9090
