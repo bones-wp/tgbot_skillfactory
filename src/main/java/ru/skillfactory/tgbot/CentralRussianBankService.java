@@ -25,9 +25,7 @@ public class CentralRussianBankService extends WebServiceTemplate {
         final GetCursOnDateXml getCursOnDateXML = new GetCursOnDateXml();
 
         GregorianCalendar cal = new GregorianCalendar();
-
         cal.setTime(new Date());
-
         XMLGregorianCalendar xmlGregCal = DatatypeFactory.newInstance().newXMLGregorianCalendar(cal);
         getCursOnDateXML.setOnDate(xmlGregCal);
 
