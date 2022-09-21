@@ -4,11 +4,14 @@ spring:
     url: jdbc:postgresql://localhost:5432/tgbot-skillfactory
     username: postgres
     password: root
+
 cbr:
   api:
     url: http://www.cbr.ru/dailyinfowebserv/dailyinfo.asmx?wsdl
+
 server:
   port: 9090
+
 bot:
   name: TestTelegramBot
   api.key: 5609401876:AAH94ba-xFry3Ipc4HIX4zV4CKKnL6463WM

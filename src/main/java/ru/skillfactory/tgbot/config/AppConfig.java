@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.ws.soap.saaj.SaajSoapMessageFactory;
-import ru.skillfactory.tgbot.CentralRussianBankService;
+import ru.skillfactory.tgbot.services.CentralRussianBankService;
 import ru.skillfactory.tgbot.dataTransferObjects.GetCursOnDateXml;
 import ru.skillfactory.tgbot.dataTransferObjects.GetCursOnDateXmlResponse;
 import ru.skillfactory.tgbot.dataTransferObjects.GetCursOnDateXmlResult;

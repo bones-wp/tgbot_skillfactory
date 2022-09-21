@@ -1,4 +1,4 @@
-package ru.skillfactory.tgbot;
+package ru.skillfactory.tgbot.services;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ws.client.core.WebServiceTemplate;
