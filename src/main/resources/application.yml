@@ -4,6 +4,9 @@ spring:
     url: jdbc:postgresql://localhost:5432/tgbot-skillfactory
     username: postgres
     password: root
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 
 cbr:
   api:
