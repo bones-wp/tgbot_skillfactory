@@ -1,4 +1,3 @@
 language: java
-jdk:
-    oraclejdk17
+jdk: oraclejdk17
 script: mvn clean install -DskipTests
