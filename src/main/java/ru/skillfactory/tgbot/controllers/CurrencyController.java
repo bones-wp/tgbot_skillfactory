@@ -23,7 +23,7 @@ public class CurrencyController {
     }
 
     @GetMapping("/getCurrency/{code}")
-    @ApiOperation(value = "Получение курса определенно валюты на текущий день")
+    @ApiOperation(value = "Получение курса определённой валюты на текущий день")
     public ValuteCursOnDate getCourseForCurrency(@PathVariable String code) throws Exception {
         return centralRussianBankService.getCourseForCurrency(code);
     }
