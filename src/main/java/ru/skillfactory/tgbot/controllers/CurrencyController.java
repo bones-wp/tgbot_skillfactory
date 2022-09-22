@@ -22,9 +22,9 @@ public class CurrencyController {
         return centralRussianBankService.getCurrenciesFromCbr();
     }
 
-    /*@GetMapping("/getCurrency/{code}")
+    @GetMapping("/getCurrency/{code}")
     @ApiOperation(value = "Получение курса определенно валюты на текущий день")
     public ValuteCursOnDate getCourseForCurrency(@PathVariable String code) throws Exception {
         return centralRussianBankService.getCourseForCurrency(code);
-    }*/
+    }
 }
