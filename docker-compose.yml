@@ -2,9 +2,26 @@ version: '3.1'
 
 services:
   tgbot:
+    depends_on:
+      - tgbot-db
     build:
       context: .
     environment:
-      BOT_NAME: TestTelegramBot
-      BOT_TOKEN: 5609401876:AAH94ba-xFry3Ipc4HIX4zV4CKKnL6463WM
+      BOT_NAME: ${BOT_NAME}
+      BOT_TOKEN: ${BOT_TOKEN}
+      BOT_DB_USERNAME: ${BOT_DB_USERNAME}
+      BOT_DB_PASSWORD: ${BOT_DB_PASSWORD}
     restart: always
+  tgbot-db:
+    image: postgres
+    restart: always
+    container_name: dev_tgbot-db
+    environment:
+      POSTGRES_DB: "dev_tgbot-db"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "root"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - .:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
