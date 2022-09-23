@@ -1,0 +1,10 @@
+version: '3.1'
+
+services:
+  tgbot:
+    build:
+      context: .
+    environment:
+      BOT_NAME: TestTelegramBot
+      BOT_TOKEN: 5609401876:AAH94ba-xFry3Ipc4HIX4zV4CKKnL6463WM
+    restart: always

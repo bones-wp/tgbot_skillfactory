@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>ru.skillfactory</groupId>
 	<artifactId>tgbot</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>tgbot</name>
 	<description>Telegram bot for finance monitoring</description>
 	<properties>
@@ -65,12 +65,12 @@
 		<dependency>
 			<groupId>com.sun.xml.bind</groupId>
 			<artifactId>jaxb-core</artifactId>
-			<version>4.0.0</version>
+			<version>4.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.sun.xml.bind</groupId>
 			<artifactId>jaxb-impl</artifactId>
-			<version>4.0.0</version>
+			<version>4.0.1</version>
 		</dependency>
 
 		<!-- xml.ws module -->
