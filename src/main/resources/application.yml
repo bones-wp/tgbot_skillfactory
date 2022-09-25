@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://dev_tgbot-db:5432/dev_tgbot-db
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5433/tgbot-db}
     username: postgres
     password: root
   mvc:

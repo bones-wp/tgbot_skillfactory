@@ -11,17 +11,19 @@ services:
       BOT_TOKEN: ${BOT_TOKEN}
       BOT_DB_USERNAME: ${BOT_DB_USERNAME}
       BOT_DB_PASSWORD: ${BOT_DB_PASSWORD}
+      SPRING_DATASOURCE_URL: jdbc:postgresql://tgbot-db:5433/tgbot-db
     restart: always
   tgbot-db:
     image: postgres
     restart: always
-    container_name: dev_tgbot-db
+    container_name: tgbot-db
     environment:
-      POSTGRES_DB: "dev_tgbot-db"
-      POSTGRES_USER: "postgres"
-      POSTGRES_PASSWORD: "root"
+      POSTGRES_USER: ${BOT_DB_USERNAME}
+      POSTGRES_PASSWORD: ${BOT_DB_PASSWORD}
       PGDATA: "/var/lib/postgresql/data/pgdata"
+      POSTGRES_DB: "tgbot-db"
+
     volumes:
       - .:/docker-entrypoint-initdb.d
     ports:
-      - "5432:5432"
+      - "5433:5432"
