@@ -17,4 +17,4 @@ export BOT_DB_USERNAME='postgres'
 export BOT_DB_PASSWORD='root'
 
 # Start new deployment
-docker-compose up --build -d
+docker-compose-test up --build -d
