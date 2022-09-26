@@ -11,7 +11,7 @@ services:
       BOT_TOKEN: ${BOT_TOKEN}
       BOT_DB_USERNAME: ${BOT_DB_USERNAME}
       BOT_DB_PASSWORD: ${BOT_DB_PASSWORD}
-      SPRING_DATASOURCE_URL: jdbc:postgresql://tgbot-db:5433/tgbot-db
+      SPRING_DATASOURCE_URL: jdbc:postgresql://tgbot-db:5432/tgbot-db
     restart: always
   tgbot-db:
     image: postgres
