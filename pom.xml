@@ -15,6 +15,8 @@
 	<description>Telegram bot for finance monitoring</description>
 	<properties>
 		<java.version>17</java.version>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
 		<testcontainers.version>1.17.3</testcontainers.version>
 	</properties>
 	<dependencies>
@@ -34,7 +36,6 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -109,24 +110,27 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
 			<version>3.0.0</version>
 			<scope>compile</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
-			<version>2.9.1</version>
+			<version>3.0.0</version>
 			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.10.1</version>
 		</dependency>
 
 	</dependencies>
@@ -147,6 +151,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.7.3</version>
 				<configuration>
 					<excludes>
 						<exclude>
@@ -155,7 +160,17 @@
 						</exclude>
 					</excludes>
 				</configuration>
+
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>17</source>
+					<target>17</target>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 
