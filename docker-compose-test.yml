@@ -1,18 +1,6 @@
 version: '3.1'
 
 services:
-  tgbot:
-    depends_on:
-      - tgbot-db
-    build:
-      context: .
-    environment:
-      BOT_NAME: TestTelegramBot
-      BOT_TOKEN: 5609401876:AAH94ba-xFry3Ipc4HIX4zV4CKKnL6463WM
-      BOT_DB_USERNAME: "postgres"
-      BOT_DB_PASSWORD: "root"
-      SPRING_DATASOURCE_URL: jdbc:postgresql://tgbot-db:5432/tgbot-db
-    restart: always
   tgbot-db:
     image: postgres
     restart: always
@@ -27,3 +15,16 @@ services:
       - .:/docker-entrypoint-initdb.d
     ports:
       - "5433:5432"
+
+  tgbot:
+    depends_on:
+      - tgbot-db
+    build:
+      context: .
+    environment:
+      BOT_NAME: TestTelegramBot
+      BOT_TOKEN: 5609401876:AAH94ba-xFry3Ipc4HIX4zV4CKKnL6463WM
+      BOT_DB_USERNAME: "postgres"
+      BOT_DB_PASSWORD: "root"
+      SPRING_DATASOURCE_URL: jdbc:postgresql://tgbot-db:5432/tgbot-db
+    restart: always
