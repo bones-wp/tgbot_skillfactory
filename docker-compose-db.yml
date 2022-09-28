@@ -1,17 +1,14 @@
 version: '3.1'
+
 services:
 
   tgbot-db:
     image: postgres
     restart: always
-    container_name: tgbot-db
     environment:
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "root"
       PGDATA: "/var/lib/postgresql/data/pgdata"
       POSTGRES_DB: "tgbot-db"
-
-    volumes:
-      - .:/docker-entrypoint-initdb.d
     ports:
       - "5433:5432"
