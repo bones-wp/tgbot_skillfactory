@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "SPEND")
+@Table(name = "SPENDS")
 @Data
 public class Spend {
 

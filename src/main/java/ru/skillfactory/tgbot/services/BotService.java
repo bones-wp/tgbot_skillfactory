@@ -25,6 +25,9 @@ import java.util.concurrent.ConcurrentHashMap;
 @Slf4j //Подключаем логирование из Lombok'a
 @RequiredArgsConstructor
 public class BotService extends TelegramLongPollingBot {
+    private static final String CURRENT_RATES = "/currentrates";
+    private static final String ADD_INCOME = "/addincome";
+    private static final String ADD_SPEND = "/addspend";
 
     private final CentralRussianBankService centralBankRussianService;
     private final ActiveChatRepository activeChatRepository;
@@ -47,7 +50,7 @@ public class BotService extends TelegramLongPollingBot {
             response.setChatId(String.valueOf(chatId)); //Устанавливаем ID, полученный из предыдущего этапа сюда, чтобы сообщить, в какой чат необходимо отправить сообщение
 
             //Тут начинается самое интересное - мы сравниваем, что прислал пользователь, и какие команды мы можем обработать. Пока что у нас только одна команда
-            if ("/currentrates".equalsIgnoreCase(message.getText())) {
+            if (CURRENT_RATES.equalsIgnoreCase(message.getText())) {
 
                 //Получаем все курсы валют на текущий момент и проходимся по ним в цикле
                 for (ValuteCursOnDate valuteCursOnDate : centralBankRussianService.getCurrenciesFromCbr()) {
@@ -56,9 +59,9 @@ public class BotService extends TelegramLongPollingBot {
                     // а на следующих итерациях не перетерся текст, полученный из предыдущих итерации
                     response.setText(StringUtils.defaultIfBlank(response.getText(), "") + valuteCursOnDate.getName() + " - " + valuteCursOnDate.getCourse() + " руб." + "\n");
                 }
-            } else if ("/addincome".equalsIgnoreCase(message.getText())) {
+            } else if (ADD_INCOME.equalsIgnoreCase(message.getText())) {
                 response.setText("Отправьте мне сумму полученного дохода");
-            } else if ("/addspend".equalsIgnoreCase(message.getText())) {
+            } else if (ADD_SPEND.equalsIgnoreCase(message.getText())) {
                 response.setText("Отправьте мне сумму расходов");
             } else {
                 response.setText(financeService.addFinanceOperation(getPreviousCommand(message.getChatId()), message.getText(), message.getChatId()));
