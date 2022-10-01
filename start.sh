@@ -3,8 +3,6 @@
 # Pull new changes
 git pull
 
-docker-compose -f docker-compose-db.yml up
-
 # Prepare Jar
 mvn clean
 mvn package
