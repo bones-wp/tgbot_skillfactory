@@ -3,6 +3,8 @@
 # Pull new changes
 git pull
 
+docker-compose -f docker-compose-db.yml up
+
 # Prepare Jar
 mvn clean
 mvn package
@@ -17,5 +19,4 @@ export BOT_DB_USERNAME='postgres'
 export BOT_DB_PASSWORD='root'
 
 # Start new deployment
-docker-compose -f docker-compose-db.yml up
 docker-compose -f docker-compose-test.yml up --build -d
