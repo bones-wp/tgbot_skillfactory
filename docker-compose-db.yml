@@ -10,5 +10,8 @@ services:
       POSTGRES_PASSWORD: "root"
       PGDATA: "/var/lib/postgresql/data/pgdata"
       POSTGRES_DB: "tgbot-db"
+    volumes:
+      - .:/docker-entrypoint-initdb.d
+
     ports:
       - "5433:5432"
