@@ -1,6 +1,5 @@
 package ru.skillfactory.tgbot.repo;
 
-import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -20,8 +19,8 @@ class IncomeRepositoryTest {
     @Test
     public void testDataScripts(){
         Optional<Income> optionalIncome = incomeRepository.findById(1234L);
-        Assert.assertTrue(optionalIncome.isPresent());
-        Assert.assertEquals(new BigDecimal("5000.00"), optionalIncome.get().getIncome());
+        assertTrue(optionalIncome.isPresent());
+        assertEquals(new BigDecimal("5000.00"), optionalIncome.get().getIncome());
     }
 
 }

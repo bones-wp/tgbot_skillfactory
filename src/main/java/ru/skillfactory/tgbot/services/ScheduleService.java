@@ -29,9 +29,9 @@ public class ScheduleService {
             Set<Long> activeChatIds = activeChatRepository.findAll().stream().map(ActiveChat::getChatId).collect(Collectors.toSet());
             if (!previousRates.isEmpty()) {
                 for (int index = 0; index < currentRates.size(); index++) {
-                    if (currentRates.get(index).getCourse() - previousRates.get(index).getCourse() >= 5.0) {
+                    if (currentRates.get(index).getCourse() - previousRates.get(index).getCourse() >= 10.0) {
                         botService.sendNotificationToAllActiveChats("Курс " + currentRates.get(index).getName() + " увеличился на 5 рублей", activeChatIds);
-                    } else if (currentRates.get(index).getCourse() - previousRates.get(index).getCourse() <= 5.0) {
+                    } else if (currentRates.get(index).getCourse() - previousRates.get(index).getCourse() <= 10.0) {
                         botService.sendNotificationToAllActiveChats("Курс " + currentRates.get(index).getName() + " уменьшился на 5 рублей", activeChatIds);
                     }
                 }
