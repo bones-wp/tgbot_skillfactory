@@ -1,0 +1,1 @@
+INSERT INTO INCOMES (id, chat_id, income) VALUES (1234, 15, 5000);
