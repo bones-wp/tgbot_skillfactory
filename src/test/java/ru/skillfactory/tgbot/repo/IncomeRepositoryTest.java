@@ -21,5 +21,4 @@ class IncomeRepositoryTest {
         assertTrue(income.isPresent());
         assertEquals(new BigDecimal("5000.00"), income.get().getIncome());
     }
-
 }
