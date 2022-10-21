@@ -6,13 +6,11 @@ spring:
     password: root
   jpa:
     hibernate.ddl-auto: update
-    properties:
-      hibernate.jdbc.lob.non_contextual_creation: true
     show-sql: true
-  sql:
-    init:
-      data-locations: classpath:data.sql
-      mode: always
+  #sql:
+    #init:
+      #data-locations: classpath:data.sql
+      #mode: always
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher

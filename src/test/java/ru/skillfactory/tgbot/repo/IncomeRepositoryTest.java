@@ -1,9 +1,7 @@
-package ru.skillfactory.tgbot.repo;
+/*package ru.skillfactory.tgbot.repo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.data.jdbc.DataJdbcTest;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import ru.skillfactory.tgbot.Income;
 
@@ -22,4 +20,4 @@ class IncomeRepositoryTest {
         assertTrue(income.isPresent());
         assertEquals(new BigDecimal("5000"), income.get().getIncome());
     }
-}
+}*/
