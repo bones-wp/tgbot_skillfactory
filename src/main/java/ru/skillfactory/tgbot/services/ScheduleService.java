@@ -1,4 +1,4 @@
-package ru.skillfactory.tgbot.services;
+/*package ru.skillfactory.tgbot.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -30,9 +30,9 @@ public class ScheduleService {
             if (!previousRates.isEmpty()) {
                 for (int index = 0; index < currentRates.size(); index++) {
                     if (currentRates.get(index).getCourse() - previousRates.get(index).getCourse() >= 10.0) {
-                        botService.sendNotificationToAllActiveChats("Курс " + currentRates.get(index).getName() + " увеличился на 5 рублей", activeChatIds);
+                        botService.sendNotificationToAllActiveChats("Курс " + currentRates.get(index).getName() + " увеличился на 10 рублей", activeChatIds);
                     } else if (currentRates.get(index).getCourse() - previousRates.get(index).getCourse() <= 10.0) {
-                        botService.sendNotificationToAllActiveChats("Курс " + currentRates.get(index).getName() + " уменьшился на 5 рублей", activeChatIds);
+                        botService.sendNotificationToAllActiveChats("Курс " + currentRates.get(index).getName() + " уменьшился на 10 рублей", activeChatIds);
                     }
                 }
             } else {
@@ -42,4 +42,4 @@ public class ScheduleService {
             e.printStackTrace();
         }
     }
-}
+}*/
