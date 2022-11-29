@@ -11,7 +11,10 @@ services:
       PGDATA: "/var/lib/postgresql/data/pgdata"
       POSTGRES_DB: "tgbot-db"
     volumes:
-      - .:/docker-entrypoint-initdb.d
-
+      - ./postgres-data:/var/lib/postgresql/data
     ports:
       - "5433:5432"
+volumes:
+  tgbot-db-data:
+    name: tgbot-db-data
+
