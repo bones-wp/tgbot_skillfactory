@@ -23,6 +23,5 @@ class CurrencyControllerTest {
         mockMvc.perform(get("/getCurrencies"))
                 .andExpect(status().isOk())
                 .andDo(print());
-
     }
 }
