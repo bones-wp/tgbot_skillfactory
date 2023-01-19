@@ -21,8 +21,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-@Service //Данный класс является сервисом
-@Slf4j //Подключаем логирование из Lombok'a
+@Service
+@Slf4j
 @RequiredArgsConstructor
 public class BotService extends TelegramLongPollingBot {
     private static final String CURRENT_RATES = "/currentrates";
